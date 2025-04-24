@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { StateModule } from './store/store.module';
+import { LoadingDialogComponent } from './components/loading/loading-dialog/loading-dialog.component';
+import { ToastModule } from 'primeng/toast'
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [
-        StateModule,
+        ToastModule,
         RouterOutlet,
-        BrowserModule,
+        CommonModule,
         HttpClientModule,
-        BrowserAnimationsModule
+        LoadingDialogComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
