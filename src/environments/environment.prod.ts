@@ -1,6 +1,5 @@
 export const environment = {
     production: true,
-    webApiUrl: 'https://staging-core.bill.linkbit.net.id/api/v1',
-    socketUrl: 'https://staging-core.bill.linkbit.net.id',
-    version: 'v0.5.5-alpha'
+    webApiUrl: 'https://faturgautama-55c3b-default-rtdb.asia-southeast1.firebasedatabase.app',
+    version: 'v0.0.1-alpha'
 };

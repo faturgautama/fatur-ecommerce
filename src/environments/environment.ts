@@ -4,9 +4,8 @@
 
 export const environment = {
     production: false,
-    webApiUrl: 'http://localhost:5000/api/v1',
-    socketUrl: 'http://localhost:5000',
-    version: 'v0.2.3-alpha'
+    webApiUrl: 'https://faturgautama-55c3b-default-rtdb.asia-southeast1.firebasedatabase.app',
+    version: 'v0.0.1-alpha'
 };
 
 /*
