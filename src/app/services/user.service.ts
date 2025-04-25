@@ -40,4 +40,8 @@ export class UserService {
     getAll() {
         return this._httpBaseService.getAll('user');
     }
+
+    getUserData() {
+        return JSON.parse(localStorage.getItem("_FAUD_") as any);
+    }
 }
