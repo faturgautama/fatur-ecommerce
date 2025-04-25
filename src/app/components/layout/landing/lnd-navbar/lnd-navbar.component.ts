@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
@@ -19,4 +20,11 @@ import { InputTextModule } from 'primeng/inputtext';
 })
 export class LndNavbarComponent {
 
+    constructor(
+        private _router: Router,
+    ) { }
+
+    handleNavigateUrl(url: string) {
+        this._router.navigateByUrl(url);
+    }
 }

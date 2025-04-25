@@ -7,5 +7,12 @@ export const routes: Routes = [
         data: {
             title: 'Landing Page'
         }
+    },
+    {
+        path: 'login',
+        loadComponent: async () => (await import('./pages/landing-authentication/landing-authentication.component')).LandingAuthenticationComponent,
+        data: {
+            title: 'Login'
+        }
     }
 ];
