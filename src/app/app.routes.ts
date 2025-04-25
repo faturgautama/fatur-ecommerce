@@ -14,5 +14,9 @@ export const routes: Routes = [
         data: {
             title: 'Login'
         }
-    }
+    },
+    {
+        path: 'dashboard',
+        loadChildren: async () => (await import('./pages/dashboard/dashboard.routes')).dashboardRoutes,
+    },
 ];
