@@ -13,12 +13,22 @@
     </div>
 
     <!-- Button -->
-    <div class="flex gap-3">
+    <div class="flex gap-3 items-center">
+        @if (Customer) {
+        <p class="text-gray-700 font-medium text-sm mr-3">
+            <i class="pi pi-user text-sky-500" style="font-size: 12px"></i>&nbsp;
+            {{ Customer.nama }}
+        </p>
+
+        <p-button severity="info" label="Keluar" styleClass="p-button-sm p-button-outlined" (onClick)="handleSignOut()">
+        </p-button>
+        } @else {
         <p-button severity="info" label="MASUK" styleClass="p-button-sm p-button-outlined"
             (onClick)="handleNavigateUrl('/login')">
         </p-button>
 
         <p-button severity="info" label="DAFTAR" styleClass="p-button-sm" (onClick)="handleNavigateUrl('/login')">
         </p-button>
+        }
     </div>
 </div>
