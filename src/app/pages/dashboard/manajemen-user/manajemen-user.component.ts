@@ -81,7 +81,7 @@ export class ManajemenUserComponent implements OnInit, OnDestroy {
             .subscribe((result) => {
                 if (result) {
                     this._messageService.clear();
-                    this._messageService.add({ severity: 'success', summary: 'Berhasil!', detail: 'Login Akun Berhasil' });
+                    this._messageService.add({ severity: 'success', summary: 'Berhasil!', detail: 'User Berhasil Disimpan' });
                     this.FormUser.reset();
                 }
             })
@@ -100,7 +100,7 @@ export class ManajemenUserComponent implements OnInit, OnDestroy {
             .subscribe((result) => {
                 if (result) {
                     this._messageService.clear();
-                    this._messageService.add({ severity: 'success', summary: 'Berhasil!', detail: 'Login Akun Berhasil' });
+                    this._messageService.add({ severity: 'success', summary: 'Berhasil!', detail: 'User Berhasil Diperbarui' });
                     this.FormUser.reset();
                 }
             })
