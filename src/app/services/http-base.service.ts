@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { MessageService } from 'primeng/api';
 
@@ -41,6 +41,18 @@ export class HttpBaseService {
 
     get<T>(path: string): Observable<T> {
         return this.handleRequest(this._httpClient.get<T>(this.withJson(path)));
+    }
+
+    getAll<T>(path: string): Observable<(T & { id: string })[]> {
+        return this._httpClient.get<{ [key: string]: T }>(this.withJson(path)).pipe(
+            map((data) => {
+                if (!data) return [];
+                return Object.entries(data).map(([id, value]) => ({
+                    id,
+                    ...value,
+                }));
+            }),
+        );
     }
 
     post<T>(path: string, data: any): Observable<T> {

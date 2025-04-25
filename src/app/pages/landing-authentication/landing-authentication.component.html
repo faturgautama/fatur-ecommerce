@@ -62,7 +62,8 @@
         <!-- Button -->
         <div class="grid w-full mb-2">
             <p-button severity="info" label="{{ FormState == 'register' ? 'Register Sekarang' : 'Login Sekarang' }}"
-                styleClass="p-button-sm w-full">
+                styleClass="p-button-sm w-full"
+                (onClick)="FormState == 'register' ? handleRegister(FormAuthentication.value) : handleLogin(FormAuthentication.value)">
             </p-button>
         </div>
 
