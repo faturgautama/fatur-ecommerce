@@ -8,9 +8,13 @@ export const dashboardRoutes: Routes = [
     {
         path: 'beranda',
         loadComponent: async () => (await import('./beranda/beranda.component')).BerandaComponent,
-        data: {
-            title: 'Beranda',
-            breadcrumbs: ['Beranda']
-        }
+    },
+    {
+        path: 'user',
+        loadComponent: async () => (await import('./manajemen-user/manajemen-user.component')).ManajemenUserComponent,
+    },
+    {
+        path: 'produk',
+        loadComponent: async () => (await import('./manajemen-produk/manajemen-produk.component')).ManajemenProdukComponent,
     },
 ]

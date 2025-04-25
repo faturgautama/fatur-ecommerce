@@ -29,12 +29,16 @@ export class UserService {
             )
     }
 
-    register(payload: CustomerModel.Register) {
+    create(payload: CustomerModel.Register) {
         return this._httpBaseService.post('user', {
             ...payload,
             created_at: new Date(),
             status: true
         });
+    }
+
+    update(payload: CustomerModel.Register) {
+        return this._httpBaseService.post('user', payload);
     }
 
     getAll() {
